@@ -298,9 +298,18 @@
 
         <!-- script for the Einstein chatbot -->
         <script type='text/javascript'>
+		window.addEventListener('message', receiveMessage,false);
+		function receiveMessage(event) {
+			console.log('---------------------');
+			//document.querySelector(".embeddedServiceHelpButton .head").style.backgroundColor = "#E70026";
+			var payload = event.data;
+		    if(payload && payload.type === 'chasitor.sendMessage') {
+			    embedded_svc.postMessage('chasitor.sendMessage', payload.message);
+		    }
+		}
+		};
+		
 	var initESW = function(gslbBaseURL) {
-
-
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 		embedded_svc.settings.displayHelpButton = true;

@@ -300,13 +300,15 @@
         <script type='text/javascript'>
 		window.addEventListener('message', receiveMessage,false);
 		function receiveMessage(event) {
-			console.log('---------------------');
-			//document.querySelector(".embeddedServiceHelpButton .head").style.backgroundColor = "#E70026";
-			var payload = event.data;
+		var msg = event.detail;
+		console.log('---------------------1',msg);
+		//document.querySelector(".embeddedServiceHelpButton .head").style.backgroundColor = "#E70026";
+		var payload = event.data;
 		    if(payload && payload.type === 'chasitor.sendMessage') {
 			    embedded_svc.postMessage('chasitor.sendMessage', payload.message);
 		    }
-			console.log('---------------------',payload);
+		var str = payload.message;
+		console.log('---------------------2',str);
 		}
 		
 	var initESW = function(gslbBaseURL) {

@@ -2,14 +2,18 @@
 <html>
     <head>
 	    <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
-        <title>Chatbot Dev AS</title>
+        <title>Chatbot Full AS</title>
         <style>
-		@font-face {
-		    font-family: 'Gotham';
-		    src: url("../Einstein-Bot/GothamBook.ttf") format('truetype');
-		    font-weight: normal;
-		    font-style: normal;
-		}
+	    :root {
+	       --color: #e70026;
+	       --blue: #0f2b4c;
+	    }
+	    @font-face {
+		font-family: 'Gotham';
+		src: url("../Einstein-Bot/GothamBook.ttf") format('truetype');
+	        font-weight: normal;
+	        font-style: normal;
+	    }
             @media only screen and (min-width: 600px) {
             .embeddedServiceLiveAgentStateChat .messageArea{
                 overflow-y: hidden !important;
@@ -32,7 +36,7 @@
             overflow-y: auto !important;
         }
         .embeddedServiceLiveAgentStateChatInputFooter .footerMenuWrapper .footer-menu .slds-button__icon {
-            fill: #e70026 !important;
+            fill: var(--color) !important;
         }
         .embeddedServiceLiveAgentStateChatInputFooter .footerMenuWrapper .footer-menu .slds-dropdown-trigger {
             padding: 9px !important;
@@ -55,8 +59,11 @@
             border-bottom: 2px solid #edeff1 !important;
         }
 	.head[c-chatHeader_chatHeader] {
-            background-color: #e70026 !important;
+            background-color: var(--color) !important;
         }
+	.minimizedContainer[c-custom-minimized] {
+	    background-color: var(--color) !important;
+	}
 	.embeddedServiceSidebar.modalContainer {
 		font-family: Gotham, sans-serif !important;
 	}
@@ -127,7 +134,7 @@
         }
         .embeddedServiceLiveAgentStateChatMenuMessage .rich-menu-item,
         .embeddedServiceLiveAgentStateChatMenuMessage .rich-menu-itemOptionIsClicked {
-            color: #e70026 !important;
+            color: var(--color) !important;
         }
         .embeddedServiceLiveAgentStateChatItem .chatContent ul.rich-menu-items li:first-of-type:hover {
             border: 1px solid #3984be !important;
@@ -147,7 +154,7 @@
         .btnCircleAgent[c-chatHeader_chatHeader],
         .btnCircle[c-chatHeader_chatHeader] {
             margin-top: 0 !important;
-            background-color: #e70026 !important;
+            background-color: var(--color) !important;
         }
         .chat-content > .rich-button-item {
             color: #0f2b4c !important;
@@ -166,7 +173,7 @@
             margin: 8px auto !important;
             white-space: normal !important;
             word-wrap: break-word !important;
-            border: 1px solid #e70026 !important;
+            border: 1px solid var(--color) !important;
         /*     width: 250px !important; */
         }
         .rich-menu-items > li:hover {
@@ -179,7 +186,7 @@
             width: 100% !important;
         }
         .rich-menu-itemOptionIsClicked {
-            color: #e70026 !important;
+            color: var(--color) !important;
             white-space: nowrap !important;
             text-align: center !important;
             width: 100% !important;
@@ -187,7 +194,7 @@
         }
 
         .rich-menu-item:hover {
-            background-color: #e70026 !important;
+            background-color: var(--color) !important;
             color: #fff !important;
         }
         .embeddedServiceLiveAgentStateChatMenuMessage .rich-menu {
@@ -224,7 +231,7 @@
         }
         .embeddedServiceSidebarButton .label,
         .embeddedServiceSidebarButton:disabled .label {
-            color: #e70026 !important;
+            color: var(--color) !important;
         }
         .embeddedServiceSidebarButton:focus {
             box-shadow: none !important;
@@ -258,7 +265,7 @@
         }
 
         .embeddedServiceHelpButton .helpButton .uiButton {
-             background: #e70026 !important;
+             background: var(--color) !important;
              font-size: 0.875rem !important;
 	     font-family: Gotham, sans-serif !important;
         }
@@ -271,7 +278,7 @@
             border: 1px solid #0F2B4C !important;
         }
         .embeddedServiceSidebarButton.uiButton:hover, .embeddedServiceSidebarButton.uiButton:disabled:hover {
-            background: #e70026 !important;
+            background: var(--color) !important;
             color: #fff !important;
             border: 1px solid #0F2B4C !important;
         }
@@ -286,7 +293,44 @@
         top: 0;
         left: 0;pointer-events: none;
       }
+      /* The Modal (background) */
+	.bacmodal {
+	  display: none; /* Hidden by default */
+	  position: fixed; /* Stay in place */
+	  z-index: 1; /* Sit on top */
+	  padding-top: 100px; /* Location of the box */
+	  left: 0;
+	  top: 0;
+	  width: 100%; /* Full width */
+	  height: 100%; /* Full height */
+	  overflow: auto; /* Enable scroll if needed */
+	  background-color: rgb(0,0,0); /* Fallback color */
+	  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	}
 
+	/* Modal Content */
+	.bacmodal .modal-content {
+	  background-color: #fefefe;
+	  margin: auto;
+	  padding: 20px;
+	  border: 1px solid #888;
+	  width: 80%;
+	}
+
+	/* The Close Button */
+	.bacmodal .close {
+	  color: #aaaaaa;
+	  float: right;
+	  font-size: 28px;
+	  font-weight: bold;
+	}
+
+	.bacmodal .close:hover,
+	.bacmodal .close:focus {
+	  color: #000;
+	  text-decoration: none;
+	  cursor: pointer;
+	}
 
         </style>
     </head>
@@ -305,22 +349,13 @@
 		<!-- Modal content-->
 	    </div>
 	</div>
+<!-- <iframe style="position:relative; top: 16px; left: 16px;" src="" name="iframe_bac" width="1050" height="525" frameBorder="0"></iframe> -->
+
         <!-- script for the Einstein chatbot -->
         <script type='text/javascript'>
-		window.addEventListener('message', receiveMessage,false);
-		function receiveMessage(event) {
-		var msg = event.detail;
-		console.log('---------------------1',msg);
-		//document.querySelector(".embeddedServiceHelpButton .head").style.backgroundColor = "#E70026";
-		var payload = event.data;
-		    if(payload && payload.type === 'chasitor.sendMessage') {
-			    embedded_svc.postMessage('chasitor.sendMessage', payload.message);
-		    }
-		var str = payload.message;
-		console.log('---------------------2',str);
-		}
-		
 	var initESW = function(gslbBaseURL) {
+
+
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
 		embedded_svc.settings.displayHelpButton = true;
@@ -332,16 +367,16 @@
                 "Chat & Co-Browse with an Expert";
 
 		embedded_svc.init(
-			'https://lwta--pm.my.salesforce.com',
-			'https://pm-lixilamerica.cs24.force.com/LWTACustomerService',
+			'https://lwta--full.my.salesforce.com',
+			'https://full-lixilamerica.cs192.force.com/LWTACustomerService',
 			gslbBaseURL,
-			'00D190000009s5o',
+			'00D7d0000077mM7',
 			'Bot_Chatbots_Group',
 			{
-				baseLiveAgentContentURL: 'https://c.la1-c1cs-ia2.salesforceliveagent.com/content',
+				baseLiveAgentContentURL: 'https://c.la3-c1cs-ia5.salesforceliveagent.com/content',
 				deploymentId: '5723l000000CmZ3',
-				buttonId: '5733l000000CnFp',
-				baseLiveAgentURL: 'https://d.la1-c1cs-ia2.salesforceliveagent.com/chat',
+				buttonId: '5737d00000001P8',
+				baseLiveAgentURL: 'https://d.la3-c1cs-ia5.salesforceliveagent.com/chat',
 				eswLiveAgentDevName: 'Bot_Chatbots_Group',
 				isOfflineSupportEnabled: false
 			}
@@ -358,12 +393,12 @@
 	} else {
 		initESW('https://service.force.com');
 	}
-</script>
+    </script>
 
 
 
         <!-- script for the  cobrowse -->
-        <script type="text/javascript">
+        <!--<script type="text/javascript">
             (function (w, t, c, p, s, e) {
             p = new Promise(function (r) {
                 w[c] = {
@@ -442,12 +477,31 @@
                 });
             });
             });
-        </script>
+        </script>-->
 
         <!-- script fot remove agnet user id -->
         <script type="text/javascript">
 		
-		document.addEventListener("openBACDialog", function(event){
+	    document.addEventListener("setConfigurationVar", function(event){
+		    console.log(event.detail);
+		    console.log(event.detail.textColor);
+	    });
+	    window.addEventListener('message', receiveMessage,false);
+		function receiveMessage(event) {
+		    console.log('---------------------');
+		    console.log(event.data);
+		    var r = document.querySelector(':root');
+		    r.style.setProperty('--color', '#e70026');
+		    var payload = event.data;
+		    console.log('-------payload.type---------');
+		    console.log(payload.type);
+		    if(payload && payload.type === 'chasitor.sendMessage') {
+			    console.log('payload.message');
+			    console.log(payload.message);
+			embedded_svc.postMessage('chasitor.sendMessage', payload.message);
+		    }
+		}
+	    document.addEventListener("openBACDialog", function(event){
 		    console.log('event of BAC--------');
 		    console.log(event.detail.data);
 		    var modal = document.getElementById("bac-iframe-modal");

@@ -27,8 +27,8 @@
     transition: opacity .15s linear;
 }
 .bacmodal.iframe-modal .bacmodal-dialog {
-    z-index: 10000;
-    width: 940px;
+    z-index: 1000;
+    width: 740px;
     margin: 30px auto;
     overflow-x: hidden;
     overflow-y: auto;

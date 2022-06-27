@@ -2,11 +2,14 @@
 
 .bacmodal.iframe-modal {
     z-index: 10000;
-    width: auto !important;
+/*     width: auto !important; */
+    width: 100%;
+    height: 100%;
     padding: 40px 0 !important;
     overflow-x: hidden;
     overflow-y: auto;
     margin: 0 !important;
+    position: relative;
 }
 .bacmodal {
     position: fixed;
@@ -29,7 +32,7 @@
 .bacmodal.iframe-modal .bacmodal-dialog {
     z-index: 10000;
 /*     float: left; */
-    width: 830px;
+    width: 100%;
     margin: 30px auto;
     overflow-x: hidden;
     overflow-y: auto;

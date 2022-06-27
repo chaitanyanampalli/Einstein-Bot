@@ -37,7 +37,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     margin-top: 0;
-    padding: 30px;
+    padding: 35px;
 }
 .bacmodal.fade .bacmodal-dialog {
     -webkit-transition: -webkit-transform .3s ease-out;

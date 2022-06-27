@@ -1,7 +1,7 @@
 /* Modal Content */
 
 .bacmodal.iframe-modal {
-    z-index: 1000;
+    z-index: 10000;
     width: auto !important;
     padding: 40px 0 !important;
     overflow-x: hidden;
@@ -29,7 +29,7 @@
 .bacmodal.iframe-modal .bacmodal-dialog {
     z-index: 10000;
 /*     float: left; */
-    width: 900px;
+    width: 840px;
     margin: 30px auto;
     overflow-x: hidden;
     overflow-y: auto;

@@ -29,7 +29,7 @@
 .bacmodal.iframe-modal .bacmodal-dialog {
     z-index: 10000;
 /*     float: left; */
-    width: 840px;
+    width: 830px;
     margin: 30px auto;
     overflow-x: hidden;
     overflow-y: auto;

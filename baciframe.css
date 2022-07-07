@@ -2,14 +2,11 @@
 
 .bacmodal.iframe-modal {
     z-index: 10000;
-/*     width: auto !important; */
-    width: 100%;
-    height: 100%;
+    width: auto !important;
     padding: 40px 0 !important;
     overflow-x: hidden;
     overflow-y: auto;
     margin: 0 !important;
-    position: relative;
 }
 .bacmodal {
     position: fixed;
@@ -31,13 +28,12 @@
 }
 .bacmodal.iframe-modal .bacmodal-dialog {
     z-index: 10000;
-/*     float: left; */
-    width: 100%;
+    width: 940px;
     margin: 30px auto;
     overflow-x: hidden;
     overflow-y: auto;
     margin-top: 0;
-    padding: 35px;
+    padding-top: 30px;
 }
 .bacmodal.fade .bacmodal-dialog {
     -webkit-transition: -webkit-transform .3s ease-out;
@@ -120,9 +116,14 @@ button.close {
     padding: 15px;
     width: 100%;
 }
-.bacmodal-body {
+.modal-body.bac-iframe {
     position: relative;
     padding: 15px;
+}
+.bacmodal.iframe-modal .bacmodal-dialog .bacmodal-content .iframe-modal-body.bac-iframe iframe {
+    height: 525px;
+    max-height: 95vh;
+	width: 100%;
 }
 .bacmodal iframe {
     border-width: 0px !important;
@@ -143,13 +144,24 @@ button.close {
     -o-transform: translate(0,0);
     transform: translate(0,0);
 }
-
+.bacmodal.iframe-modal .bacmodal-dialog {
+    width: 100%;
+    max-width: 1070px;
+}
 @media screen and (min-width: 1200px) and (max-width: 1300px){
     .bacmodal.iframe-modal .bacmodal-dialog .bacmodal-content .iframe-modal-body.bac-iframe iframe {
         height: 557px !important;
     }
 }
-
+@media screen and (max-width: 992px){
+    .bacmodal.iframe-modal {
+        max-width: 79%;
+        margin: 0 auto !important;
+    }
+    .bacmodal.bacmodal-dialog {
+        max-width: 100%;
+    }
+}
 @media (min-width: 768px){
     .bacmodal-dialog {
         width: 600px;

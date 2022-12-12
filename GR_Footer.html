@@ -439,17 +439,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
         integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+     <script src="https://code.jquery.com/jquery-3.3.1.js"
+	    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+	    crossorigin="anonymous"></script>
     <body>
       <div class="topnav">
-	  <a class="active" href="GR_Footer.html">Home</a>
-	  <a href="page1.html">News</a>
-	  <a href="page2.html">Contact</a>
-	  <a href="#about">About</a>
+	  <a id="home" class="active" href="">Home</a>
+	  <a id="news" href="">News</a>
+	  <a id="contact" href="">Contact</a>
+	  <a id="about" href="">About</a>
 	</div>
 
-	<div style="padding-left:16px">
-	  <h2>Body Navigation </h2>
+	<div id="content" style="padding-left:16px">
 	</div>
         <div class="bacmodal fade iframe-modal" id="bac-iframe-modal" role="dialog" aria-hidden="true"
             style="display: none;">
@@ -479,7 +480,15 @@
 	    </div>
         <!-- script for the Einstein chatbot -->
         <script type='text/javascript'>
-	  
+	  	$("#home").click(function(){
+		  $("#content").load("page1.html");
+		});
+		$("#news").click(function(){
+		  $("#content").load("page1.html");
+		});
+		$("#contact").click(function(){
+		  $("#content").load("page2.html");
+		});
              function helpButtonLoaded() {
                 var helpButton = document.querySelector('.helpButton');
                 if (!helpButton) {
@@ -681,7 +690,7 @@
                     btnClose.onclick = function() {
                         modal.style.display = "none";
                         modal.classList.remove('in');
-           
+                        modal.classList.add('out');
                     }
                 }
 

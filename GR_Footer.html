@@ -518,15 +518,6 @@
                     "https://americanstandard.box.com/shared/static/7q9y3t6h8gtpo2rkui0nhadp1q3x298x.png";
                 embedded_svc.settings.defaultMinimizedText =
                     "Chat & Co-Browse with an Expert";
-		embedded_svc.addEventHandler("onChatReconnectSuccessful", function() {
-		     let smeet = document.getElementById('screenmeet');
-                  iframeEle = document.getElementById('meetRender');
-                    if(iframeEle){
-                        iframeEle.src = "";
-
-                    }
-                  smeet.style.display = 'none';
-		});
                 embedded_svc.init(
                     'https://lwta--full.my.salesforce.com',
                     'https://full-lixilamerica.cs192.force.com/LWTACustomerService',

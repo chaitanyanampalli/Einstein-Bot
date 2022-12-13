@@ -489,6 +489,9 @@
 		$("#contact").click(function(){
 		  $("#content").load("page2.html");
 		});
+		$("#closeModal").click(function(){
+		  $("#content").load("page2.html");
+		});
              function helpButtonLoaded() {
                 var helpButton = document.querySelector('.helpButton');
                 if (!helpButton) {
@@ -793,7 +796,6 @@
                   }
             });
             function closeDiv(){
-		    console.log('close Event');
                   let smeet = document.getElementById('screenmeet');
                   iframeEle = document.getElementById('meetRender');
                     if(iframeEle){

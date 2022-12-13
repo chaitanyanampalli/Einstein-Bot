@@ -489,6 +489,11 @@
 		$("#contact").click(function(){
 		  $("#content").load("page2.html");
 		});
+		window.onload = function() {
+		    var reloading = sessionStorage.getItem("reloading");
+			console.log("Load");
+			console.log(reloading);
+		}
              function helpButtonLoaded() {
                 var helpButton = document.querySelector('.helpButton');
                 if (!helpButton) {

@@ -492,6 +492,12 @@
 		$("#closeModal").click(function(){
 		  $("#content").load("page2.html");
 		});
+		var btnClose = document.getElementById("closeModal");
+                    btnClose.onclick = function() {
+                        modal.style.display = "none";
+                        modal.classList.remove('in');
+                        modal.classList.add('out');
+                    }
              function helpButtonLoaded() {
                 var helpButton = document.querySelector('.helpButton');
                 if (!helpButton) {
@@ -563,6 +569,9 @@
                   }, '*');
                 });
             };
+		embedded_svc.addEventHandler("onChatReconnectSuccessful", function(data) {
+		    console.log("onChatEndedByChasitor event was fired.  liveAgentSessionKey was " + data.liveAgentSessionKey);
+		});
 
             if (!window.embedded_svc) {
                 var s = document.createElement('script');

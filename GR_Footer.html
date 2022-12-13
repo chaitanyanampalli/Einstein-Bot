@@ -519,12 +519,13 @@
                 embedded_svc.settings.defaultMinimizedText =
                     "Chat & Co-Browse with an Expert";
 		embedded_svc.addEventHandler("onChatReconnectSuccessful", function() {
-		     var btnClose = document.getElementById("closeModal");
-                    btnClose.onclick = function() {
-                        modal.style.display = "none";
-                        modal.classList.remove('in');
-                        modal.classList.add('out');
+		     let smeet = document.getElementById('screenmeet');
+                  iframeEle = document.getElementById('meetRender');
+                    if(iframeEle){
+                        iframeEle.src = "";
+
                     }
+                  smeet.style.display = 'none';
 		});
                 embedded_svc.init(
                     'https://lwta--full.my.salesforce.com',

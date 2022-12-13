@@ -519,7 +519,7 @@
                 embedded_svc.settings.defaultMinimizedText =
                     "Chat & Co-Browse with an Expert";
 		embedded_svc.addEventHandler("onChatReconnectSuccessful", function() {
-		    window.parent.postMessage('Test reconnect message', '*');
+		    $('#bac-iframe-modal').modal('hide');
 		});
                 embedded_svc.init(
                     'https://lwta--full.my.salesforce.com',

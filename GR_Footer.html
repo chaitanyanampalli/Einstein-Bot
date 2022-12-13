@@ -492,12 +492,6 @@
 		$("#closeModal").click(function(){
 		  $("#content").load("page2.html");
 		});
-		var btnClose = document.getElementById("closeModal");
-                    btnClose.onclick = function() {
-                        modal.style.display = "none";
-                        modal.classList.remove('in');
-                        modal.classList.add('out');
-                    }
              function helpButtonLoaded() {
                 var helpButton = document.querySelector('.helpButton');
                 if (!helpButton) {
@@ -524,8 +518,8 @@
                     "https://americanstandard.box.com/shared/static/7q9y3t6h8gtpo2rkui0nhadp1q3x298x.png";
                 embedded_svc.settings.defaultMinimizedText =
                     "Chat & Co-Browse with an Expert";
-		embedded_svc.addEventHandler("onChatReconnectSuccessful", function(data) {
-		    console.log("onChatEndedByChasitor event was fired.  liveAgentSessionKey was " + data.liveAgentSessionKey);
+		embedded_svc.addEventHandler("onChatReconnectSuccessful", function() {
+		    window.parent.postMessage('Test reconnect message', '*');
 		});
                 embedded_svc.init(
                     'https://lwta--full.my.salesforce.com',

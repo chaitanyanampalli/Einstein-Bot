@@ -680,6 +680,11 @@
                
                 let bacurl = event.detail.data;
                 let iframeEle = document.getElementById("baciframe");
+		let iframeClose = document.getElementById("baciframe").src;
+		if(iframeClose != 'about:blank')
+		{
+			document.getElementById("closeModal").click();
+		}
                 iframeEle.setAttribute("src", bacurl);
                 if(bacurl != '' && bacurl != null){
                     let modal = document.getElementById("bac-iframe-modal");

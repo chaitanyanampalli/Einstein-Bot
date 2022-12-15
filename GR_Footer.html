@@ -493,7 +493,7 @@
 		  $("#content").load("page2.html");
 		});
              function helpButtonLoaded() {
-		     alert('hi');
+		document.getElementById("closeModal").click();
                 var helpButton = document.querySelector('.helpButton');
                 if (!helpButton) {
                     window.setTimeout(helpButtonLoaded, 500);

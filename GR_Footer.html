@@ -493,7 +493,11 @@
 		  $("#content").load("page2.html");
 		});
              function helpButtonLoaded() {
-		document.getElementById("closeModal").click();
+		let iframeClose = window.performance.getEntriesByType('navigation')[0].type;
+		if(iframeClose == 'reload')
+		{
+			document.getElementById("closeModal").click();
+		}
                 var helpButton = document.querySelector('.helpButton');
                 if (!helpButton) {
                     window.setTimeout(helpButtonLoaded, 500);
@@ -680,11 +684,6 @@
                
                 let bacurl = event.detail.data;
                 let iframeEle = document.getElementById("baciframe");
-		let iframeClose = window.performance.getEntriesByType('navigation')[0].type;
-		if(iframeClose == 'reload')
-		{
-			document.getElementById("closeModal").click();
-		}
                 iframeEle.setAttribute("src", bacurl);
                 if(bacurl != '' && bacurl != null){
                     let modal = document.getElementById("bac-iframe-modal");

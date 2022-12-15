@@ -442,7 +442,7 @@
      <script src="https://code.jquery.com/jquery-3.3.1.js"
 	    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
 	    crossorigin="anonymous"></script>
-    <body onload="codeAddress();">
+    <body>
 	  <div class="topnav">
 	  <a id="home" class="active" href="#home">Home</a>
 	  <a id="news" href="#news">News</a>
@@ -479,10 +479,7 @@
             <iframe src="" id="meetRender" allow="camera; microphone" style="height: 100%; width:100%;"></iframe>
 	    </div>
         <!-- script for the Einstein chatbot -->
-        <script type='text/javascript'>
-		function codeAddress() {
-		    alert('ok');
-		}  
+        <script type='text/javascript'> 
 	  	$("#home").click(function(){
 		  $("#content").load("page1.html");
 		});
@@ -496,6 +493,7 @@
 		  $("#content").load("page2.html");
 		});
              function helpButtonLoaded() {
+		     alert('hi');
                 var helpButton = document.querySelector('.helpButton');
                 if (!helpButton) {
                     window.setTimeout(helpButtonLoaded, 500);

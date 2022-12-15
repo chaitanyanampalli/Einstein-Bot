@@ -680,8 +680,8 @@
                
                 let bacurl = event.detail.data;
                 let iframeEle = document.getElementById("baciframe");
-		let iframeClose = document.getElementById("baciframe").src;
-		if(iframeClose != 'about:blank')
+		let iframeClose = window.performance.getEntriesByType('navigation')[0].type;
+		if(iframeClose == 'reload')
 		{
 			document.getElementById("closeModal").click();
 		}

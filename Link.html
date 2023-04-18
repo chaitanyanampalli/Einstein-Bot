@@ -624,9 +624,9 @@
                     }
                 }
             });
-	    document.addEventListener("redirectRegisterLink", function (event) {
-	    let link = event.detail.data;
-	    console.log("Redirect");
+	document.addEventListener("redirectRegisterLink", function (event) {
+	console.log("Redirect");    
+	let link = event.detail.data;
 	     window.location.href = "https://www.grohe.us/parts-and-services/warranty";
 	    });    
             document.addEventListener("openBACDialog", function (event) {

@@ -630,7 +630,7 @@
 	     window.location.href = "https://www.grohe.us/parts-and-services/warranty";
 	    });    
             document.addEventListener("openBACDialog", function (event) {
-               
+              console.log("openBACDialog"); 
                 let bacurl = event.detail.data;
                 let iframeEle = document.getElementById("baciframe");
                 iframeEle.setAttribute("src", bacurl);

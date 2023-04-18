@@ -624,7 +624,10 @@
                     }
                 }
             });
-
+	    document.addEventListener("redirectRegisterLink", function (event) {
+	    let link = event.detail.data;
+	    console.log("Redirect");
+	    });    
             document.addEventListener("openBACDialog", function (event) {
                
                 let bacurl = event.detail.data;
